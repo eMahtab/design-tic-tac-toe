@@ -1,4 +1,6 @@
 # Design Tic Tac Toe
+## https://leetcode.com/problems/design-tic-tac-toe
+
 
 # Implementation :
 ```java
@@ -69,3 +71,6 @@ class TicTacToe {
  * int param_1 = obj.move(row,col,player);
  */
 ```
+
+# References :
+https://leetcode.com/problems/design-tic-tac-toe/discuss/163279/Java-naive-o(4n)-solution-by-checking-row-col-and-two-diagonals-each-time
