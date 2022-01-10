@@ -3,9 +3,10 @@
 
 Assume the following rules are for the tic-tac-toe game on an n x n board between two players:
 
-A move is guaranteed to be valid and is placed on an empty block.
-Once a winning condition is reached, no more moves are allowed.
-A player who succeeds in placing n of their marks in a horizontal, vertical, or diagonal row wins the game.
+1. A move is guaranteed to be valid and is placed on an empty block.
+2. Once a winning condition is reached, no more moves are allowed.
+3. A player who succeeds in placing n of their marks in a horizontal, vertical, or diagonal row wins the game.
+
 ```
 Implement the TicTacToe class:
 
