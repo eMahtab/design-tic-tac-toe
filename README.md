@@ -12,7 +12,72 @@ Implement the TicTacToe class:
 
 TicTacToe(int n) Initializes the object the size of the board n.
 
-int move(int row, int col, int player) Indicates that the player with id player plays at the cell (row, col) of the board. The move is guaranteed to be a valid move.
+int move(int row, int col, int player) Indicates that the player with id player plays at the cell (row, col) of the board.
+The move is guaranteed to be a valid move.
+```
+# Implementation 1 : Check the row, check column, check main diagonal, check opposite diagonal
+```java
+class TicTacToe {
+    int[][] board;
+    public TicTacToe(int n) {
+        board = new int[n][n];
+    }
+    
+    public int move(int row, int col, int player) {
+        board[row][col] = player;
+        int win = checkBoard(row,col,player);
+        return win;
+    }
+    
+    private int checkBoard(int row, int col, int player) {
+        //check the row
+        int rowCount = 0;
+        for(int j = 0; j < board[0].length; j++) {
+            if(board[row][j] != player)
+                break;
+            else
+                rowCount++;
+        }
+        if(rowCount == board.length)
+            return player;
+        
+        //check the column
+        int colCount = 0;
+        for(int i = 0; i < board.length; i++) {
+            if(board[i][col] != player)
+                break;
+            else
+                colCount++;
+        }
+        if(colCount == board.length)
+            return player;
+        
+        //check the main diagonal
+        int mainDiagonalCount = 0;
+        for(int i = 0; i < board.length; i++) {
+            if(board[i][i] != player)
+                break;
+            else
+               mainDiagonalCount++; 
+        }
+        if(mainDiagonalCount == board.length)
+            return player;
+        
+        //check opposite diagonal
+        int oppositeDiagonalCount = 0;
+        int n = board.length;
+        for(int i = 0; i < board.length; i++) {
+            if(board[i][n-1-i] != player)
+                break;
+            else
+               oppositeDiagonalCount++; 
+        }
+        if(oppositeDiagonalCount == board.length)
+            return player;
+        
+        return 0;
+    }
+}
 ```
 
 # Implementation :
@@ -77,12 +142,6 @@ class TicTacToe {
         return true;
     }
 }
-
-/**
- * Your TicTacToe object will be instantiated and called as such:
- * TicTacToe obj = new TicTacToe(n);
- * int param_1 = obj.move(row,col,player);
- */
 ```
 
 # References :
