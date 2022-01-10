@@ -16,6 +16,9 @@ int move(int row, int col, int player) Indicates that the player with id player 
 The move is guaranteed to be a valid move.
 ```
 # Implementation 1 : Check the row, check column, check main diagonal, check opposite diagonal
+The `player` can only win when he makes the move. Because player 1 will only make 1 and player 2 will only make 2. 
+So player 1 will never mark a 2 on the tic-tac-toe board and similalry player 2 will never mark a 1 on the board.
+
 ```java
 class TicTacToe {
     int[][] board;
