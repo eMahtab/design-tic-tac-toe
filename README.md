@@ -137,7 +137,8 @@ class TicTacToe {
 
 ```
 
-# Implementation 3 :
+# Implementation 3 : Check Main and Opposite diagonals based on player move(row,col)
+
 We should only check main diagonal if the move was made on main diagonal, for any cell on main diagonal `row == col`
 
 Similarly we should only check opposite diagonal if the move was made on opposite diagonal, for any cell on opposite diagonal `row+col == board.length - 1`
