@@ -195,4 +195,5 @@ class TicTacToe {
 ```
 
 # References :
-https://leetcode.com/problems/design-tic-tac-toe/discuss/163279/Java-naive-o(4n)-solution-by-checking-row-col-and-two-diagonals-each-time
+1. https://leetcode.com/problems/design-tic-tac-toe/solution
+2. https://leetcode.com/problems/design-tic-tac-toe/discuss/163279/Java-naive-o(4n)-solution-by-checking-row-col-and-two-diagonals-each-time
