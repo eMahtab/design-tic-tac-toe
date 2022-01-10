@@ -83,6 +83,60 @@ class TicTacToe {
 }
 ```
 
+# Implementation 2 : Refactoring of implementation 1
+```java
+class TicTacToe {
+    int[][] board;
+    public TicTacToe(int n) {
+        board = new int[n][n];
+    }
+    
+    public int move(int row, int col, int player) {
+        board[row][col] = player;
+        
+        if(checkRow(row,player) || checkColumn(col,player) ||
+           checkMainDiagonal(player) || checkOppositeDiagonal(player))
+            return player;
+        
+        return 0;
+    }
+        
+    private boolean checkRow(int row, int player) {
+        for(int j = 0; j < board[0].length; j++) {
+            if(board[row][j] != player)
+                return false;
+        }
+        return true;
+    }
+    
+    private boolean checkColumn(int col, int player) {
+        for(int i = 0; i < board.length; i++) {
+            if(board[i][col] != player)
+                return false;
+        }
+        return true;
+    }
+    
+    private boolean checkMainDiagonal(int player) {
+        for(int i = 0; i < board.length; i++) {
+            if(board[i][i] != player)
+                return false;
+        }
+        return true;
+    }
+    
+    private boolean checkOppositeDiagonal(int player) {
+        int n = board.length;
+        for(int i = 0; i < board.length; i++) {
+            if(board[i][n-1-i] != player)
+                return false;
+        }
+        return true;
+    }
+}
+
+```
+
 # Implementation :
 ```java
 class TicTacToe {
